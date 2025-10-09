@@ -2,7 +2,7 @@
 
 1. Скачайте або склонуйте цей репозиторій:
    ```bash
-   git clone [https://github.com/cloudmenson/SecureNote-Browser-Extention-Manifest-V3
+   git clone https://github.com/cloudmenson/SecureNote-Browser-Extention-Manifest-V3
    ```
 2. Відкрийте Google Chrome та перейдіть за адресою `chrome://extensions/`.
 3. Увімкніть **Режим розробника** (Developer mode) у правому верхньому куті.
