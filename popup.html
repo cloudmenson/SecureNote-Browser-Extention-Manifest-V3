@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=300, initial-scale=1" />
+    <title>Secure Note Taker</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="domain" id="domain">...</div>
+
+      <div class="inner-header">
+        <button type="button" id="addBtn" class="primary">+ Додати</button>
+
+        <button type="button" id="settingsBtn">
+          <img src="icons/gear.png" alt="Налаштування" class="icon" />
+        </button>
+      </div>
+    </header>
+
+    <div class="controls">
+      <input id="search" type="search" placeholder="Пошук нотаток" />
+
+      <button
+        type="button"
+        class="ghost"
+        id="exportBtn"
+        aria-label="Експорт JSON"
+      >
+        <img src="icons/export-json.png" alt="Експорт JSON" class="icon" />
+      </button>
+    </div>
+
+    <span class="list-title">Список нотатків</span>
+
+    <main id="list" class="list" aria-live="polite"></main>
+
+    <template id="itemTpl">
+      <article class="note">
+        <div class="meta">
+          <time class="time"></time>
+
+          <button
+            class="del"
+            type="button"
+            title="Видалити"
+            aria-label="Видатили нотатку"
+          >
+            X
+          </button>
+        </div>
+
+        <pre class="content"></pre>
+      </article>
+    </template>
+
+    <dialog id="dlg">
+      <form method="dialog" id="form">
+        <label class="label">
+          <span>Нотатка</span>
+
+          <textarea id="noteText" rows="6" required></textarea>
+        </label>
+
+        <menu class="menu">
+          <button
+            type="button"
+            id="cancelBtn"
+            value="cancel"
+            aria-label="Скасувати додавання"
+          >
+            Скасувати
+          </button>
+
+          <button
+            id="saveBtn"
+            type="submit"
+            value="default"
+            class="primary"
+            aria-label="Додати нотатку"
+          >
+            Зберегти
+          </button>
+        </menu>
+      </form>
+    </dialog>
+
+    <dialog id="settingsDlg">
+      <form method="dialog" id="settingsForm">
+        <h3>Налаштування</h3>
+
+        <label class="switch">
+          <input type="checkbox" id="toggleFab" />
+          <span class="slider"></span>
+          <span class="label-text">Показувати плаваючу кнопку</span>
+        </label>
+
+        <menu class="menu">
+          <button type="button" id="closeSettings">Закрити</button>
+        </menu>
+      </form>
+    </dialog>
+  </body>
+
+  <script src="utils.js"></script>
+  <script src="popup.js"></script>
+</html>

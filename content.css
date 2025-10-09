@@ -1,0 +1,47 @@
+.secure-note-fab {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  right: 25px;
+  bottom: 25px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #6d5dfc;
+  color: #fff;
+  border: none;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  font-size: 24px;
+  transition: transform 0.15s ease, box-shadow 0.2s ease, background 0.2s ease;
+  z-index: 9999999999;
+  overflow: visible;
+}
+.secure-note-fab:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+  background: #5a49f1;
+}
+
+.secure-note-fab:active {
+  transform: translateY(0);
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(109, 93, 252, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 0 8px rgba(109, 93, 252, 0);
+  }
+}
+
+.secure-note-fab::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  animation: pulse 1.6s ease-out infinite;
+  pointer-events: none;
+}
