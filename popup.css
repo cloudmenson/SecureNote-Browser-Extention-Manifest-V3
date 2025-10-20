@@ -73,6 +73,14 @@ header #settingsBtn {
   cursor: pointer;
 }
 
+header #settingsBtn img {
+  transition: transform 0.3s ease;
+}
+
+header #settingsBtn img:hover {
+  transform: rotate(-90deg);
+}
+
 header .inner-header img.icon {
   width: 20px;
   height: 20px;
