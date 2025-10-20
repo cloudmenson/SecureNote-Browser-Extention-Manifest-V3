@@ -1,11 +1,11 @@
 :root {
-  --bg: #0b0e16;
-  --panel: #121522;
+  --bg: #413c69;
+  --panel: #413c69;
   --card: #191d2c;
   --text: #f2f2f8;
   --muted: #a1a3bb;
   --accent: #7d6dfc;
-  --accent-hover: #9f90ff;
+  --accent-hover: rgba(96, 72, 255, 0.828);
   --danger: #ff6b6b;
   --radius: 14px;
   --transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
@@ -13,7 +13,7 @@
   --header-border: rgba(255, 255, 255, 0.07);
   --input-bg: rgba(255, 255, 255, 0.1);
   --input-border: rgba(255, 255, 255, 0.15);
-  --dialog-bg: rgba(25, 28, 45, 0.7);
+  --dialog-bg: rgba(65, 60, 105, 0.8);
   --dialog-border: rgba(255, 255, 255, 0.08);
   --backdrop: rgba(0, 0, 0, 0.55);
   --switch-bg: #444;
@@ -33,17 +33,20 @@ body {
   padding: 0;
   background: var(--bg);
   color: var(--text);
+  overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent) transparent;
   font-size: 13px;
-  overflow: hidden;
 }
 
 header {
   position: sticky;
   top: 0;
+  padding: 12px 14px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px 14px;
+  gap: 15px;
   background: var(--header-bg);
   border-bottom: 1px solid var(--header-border);
   backdrop-filter: blur(10px);
@@ -52,10 +55,11 @@ header {
 }
 
 header #domain {
+  flex: 1;
   max-width: 180px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 header .inner-header {
@@ -130,16 +134,13 @@ header .inner-header img.icon {
 }
 
 .list {
+  margin: 20px 0;
+  padding: 0 12px;
+  flex: 1;
   display: flex;
   flex-direction: column;
   gap: 10px;
-  padding: 0 12px 40px;
-  margin-top: 15px;
-  height: 100%;
-  overflow-y: auto;
-  max-height: fit-content;
-  scrollbar-width: thin;
-  scrollbar-color: var(--accent) transparent;
+  max-height: 100%;
 }
 
 .list-title {
